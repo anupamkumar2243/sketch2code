@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<br><br>
+    
+<h4>
+    Upload the Image to generate the code
+</h4>
+
+<div class="row">
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <div class="input-group">
+            <input type="file" class="form-control" name="image" required>
+            <input type="submit" value="Upload Image" class="btn btn-primary">
+        </div>
+    </form>
+<br>
+{% if fileupload %}
+
+    <div class="row">
+        <button class="btn btn-primary" id="sendData">Predict</button>
+
+    </div>
+    {% endif %}
+
+    {% if fileupload %}
+
+    <div class="row">
+        <div class="col">
+            <!-- <canvas> <img src="{{url_for('static', filename='uploads/uploads.jpg')}}" alt="User Image" style="max-width: 100%; height: auto"></canvas> -->
+            <img src="{{url_for('static', filename='uploads/uploads.jpg')}}" alt="User Image">
+
+        </div>
+
+    </div>
+
+{% endif %}
+{% endblock  %}
